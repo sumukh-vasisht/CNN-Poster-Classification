@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>Movie Genre from Poster</title>
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <style>
+        input[type="file"] {
+            color: white;
+        }
+        /* .custom-file-input {
+            border: 1px solid white;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        } */
+        
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+        
+        .custom-file-input::before {
+            content: 'Select Movie Poster';
+            display: inline-block;
+            /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
+            border: 1px solid white;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 15pt;
+            font-family: "Advent Pro";
+            background-color: white;
+            color: black;
+        }
+        
+        .custom-file-input:hover::before {
+            border-color: white;
+            background-color: black;
+            color: white;
+        }
+        
+        .custom-file-input:active::before {
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+        }
+        
+        .submit-button {
+            display: inline-block;
+            /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
+            border: 1px solid white;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 15pt;
+            font-family: "Advent Pro";
+            background-color: white;
+            color: black;
+        }
+        
+        .submit-button:hover {
+            border-color: white;
+            background-color: black;
+            color: white;
+        }
+        
+        p {
+            color: white;
+            /* font-family: "Actor"; */
+            font-family: "Dekko";
+            font-size: 200%;
+        }
+        
+        h1 {
+            color: white;
+            font-family: "Advent Pro";
+            font-size: 400%;
+        }
+        
+        .form {
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+        
+        .genre {
+            border: white;
+            background-color: white;
+            color: black;
+            font-family: "Advent Pro";
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body style="background-color:black;">
+    <form id="signup-form" method="POST" action="/" enctype="multipart/form-data" class="form">
+        <img src="{{poster_path}}" alt="Movie Poster" width="200" height="300" style="align-items: center;">
+        <h1>Movie Genre Prediction from Poster</h1>
+        <p>Predicted top 3 genres for the uploaded poster:</p>
+        <p class='genre'> {{genre0}} : {{prob0}}</p>
+        <p class='genre'> {{genre1}} : {{prob1}}</p>
+        <p class='genre'> {{genre2}} : {{prob2}}</p>
+    </form>
+</body>
+
+</html>
